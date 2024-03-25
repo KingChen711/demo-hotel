@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,22 +9,19 @@ import { sidebarLinks } from '@/constants'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
-import useCurrentUser from '@/hooks/use-current-user'
+import { User } from '@/types'
 
-function MobileNavBar() {
-  const currentUser = useCurrentUser()
+type Props = {
+  currentUser: User
+}
 
-  useEffect(() => {
-    console.log({ currentUser })
-  }, [currentUser])
-
+function MobileNavBar({ currentUser }: Props) {
   return (
     <Sheet>
       <SheetTrigger asChild>
         <Image src='/assets/icons/hamburger.svg' alt='Menu' width={36} height={36} className='sm:hidden' />
       </SheetTrigger>
 
-      {/* @ts-ignore */}
       <SheetContent side='left' className='border-none'>
         <Link href='/' className='flex items-center gap-1'>
           <Image src='/assets/images/site-logo.svg' width={28} height={28} alt='DemoHotel' />
@@ -40,11 +37,11 @@ function MobileNavBar() {
 
           <div className='flex flex-col items-center gap-3 mt-4'>
             <Avatar>
-              <AvatarImage src={currentUser?.avatarUrl} />
+              <AvatarImage src={currentUser.avatarUrl} />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
 
-            <div className='font-bold text-lg'>{currentUser?.name}</div>
+            <div className='font-bold text-lg'>{currentUser.name}</div>
 
             <SheetClose asChild>
               <Link className='w-full' href='/sign-in'>

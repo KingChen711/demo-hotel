@@ -21,18 +21,18 @@ async function NavBar() {
         </p>
       </Link>
       <div className='flex justify-between items-center gap-5'>
-        <div className='flex items-center gap-2  max-sm:hidden'>
+        <div className='flex items-center gap-2 max-sm:hidden'>
           <Avatar>
             <AvatarImage src={currentUser.avatarUrl} />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-          <div className='flex flex-col gap-1'>
+          <div className='flex flex-col'>
             <div className='font-bold text-sm'>{currentUser.name}</div>
             <div className='text-sm cursor-pointer hover:underline hover:text-primary'>Log out</div>
           </div>
         </div>
 
-        <MobileNavBar />
+        <MobileNavBar currentUser={currentUser} />
       </div>
     </nav>
   )

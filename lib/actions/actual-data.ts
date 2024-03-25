@@ -1,7 +1,7 @@
 'use server'
 
 import { Property } from '@/types'
-import actualData from '../data/actual-data.json'
+import actualData from '@/database/actual-data.json'
 
 export const getAllPropertyCodes = async (): Promise<string[]> => {
   return await new Promise((resolve) => {

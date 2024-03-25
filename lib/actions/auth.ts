@@ -1,9 +1,7 @@
 'use server'
 
 import { User } from '@/types'
-import { revalidatePath } from 'next/cache'
 import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 
 export const whoAmI = async (token: string): Promise<User | null> => {
   if (token !== 'fakeToken') {

@@ -7,6 +7,15 @@ export interface SidebarLink {
 export type Property = {
   id: number
   code: string //unique
+  name: string
+  totalRoomInHotel: number
+  roomRevenue: number
+  fnbRevenue: number
+  otherRevenue: number
+  occ: number
+  adr: number
+  hotelRoom: number
+  availableRoom: number
   clusterId: number
 
   //navigate
@@ -26,3 +35,5 @@ export type User = {
   name: string
   avatarUrl: string
 }
+
+export type ReservationForecastData = { date: 'string'; totalOcc: number; arrRooms: number; depRooms: number }[]

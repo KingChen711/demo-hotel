@@ -24,7 +24,7 @@ const Layout = async ({ children }: Props) => {
   }
 
   return (
-    <main className='relative bg-muted'>
+    <main className='relative bg-slate-100'>
       <NavBar />
       <div className='flex'>
         <LeftSideBar />
