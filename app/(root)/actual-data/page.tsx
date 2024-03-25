@@ -15,7 +15,9 @@ async function ActualDataPage({ searchParams }: Props) {
   const properties = await getPropertiesByCodes(selectedProperties)
 
   return (
-    <div>
+    <>
+      <h1 className='text-[30px] font-bold leading-[42px] tracking-tighter'>Actual Data</h1>
+
       <PropertyCodeContainer propertyCodes={propertyCodes} />
 
       {properties.map((property) => {
@@ -25,7 +27,7 @@ async function ActualDataPage({ searchParams }: Props) {
           </Button>
         )
       })}
-    </div>
+    </>
   )
 }
 
