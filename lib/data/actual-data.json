@@ -1,0 +1,15 @@
+[
+  { "id": 1, "code": "ALL" },
+  { "id": 2, "code": "SPH" },
+  { "id": 3, "code": "PP02" },
+  { "id": 4, "code": "SR01" },
+  { "id": 5, "code": "SR02" },
+  { "id": 6, "code": "SR03" },
+  { "id": 7, "code": "SR04" },
+  { "id": 8, "code": "SV01" },
+  { "id": 9, "code": "SV02" },
+  { "id": 10, "code": "SV03" },
+  { "id": 11, "code": "SV04" },
+  { "id": 12, "code": "KP01" },
+  { "id": 13, "code": "KP02" }
+]
