@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
+import { Toaster } from '@/components/ui/sonner'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -27,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={cn(inter.variable, spaceGrotesk.variable)}>{children}</body>
+      <body className={cn(inter.variable, spaceGrotesk.variable)}>
+        <main>{children}</main> <Toaster />
+      </body>
     </html>
   )
 }

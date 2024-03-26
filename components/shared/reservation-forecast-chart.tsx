@@ -16,6 +16,8 @@ function ReservationForestChart({ data }: Props) {
   const period = searchParams.get('period') || '30'
   const router = useRouter()
 
+  const strokeWidth = period === '30' ? 4 : period === '90' ? 2 : 1
+
   const handlePeriodChange = (value: string) => {
     const newUrl = formUrlQuery({
       params: searchParams.toString(),
@@ -42,16 +44,22 @@ function ReservationForestChart({ data }: Props) {
         </Select>
       </div>
 
-      <ResponsiveContainer width='100%' height={500} className='mt-8'>
+      <ResponsiveContainer width='100%' height={450} className='mt-8'>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray='3 3' />
           <XAxis dataKey='date' />
           <YAxis />
           <Tooltip />
-          <Legend />
-          <Line type='monotone' dataKey='totalOcc' stroke='#da783f' />
-          <Line type='monotone' dataKey='arrRooms' stroke='#8884d8' />
-          <Line type='monotone' dataKey='depRooms' stroke='#82ca9d' />
+          <Legend
+            payload={[
+              { id: 'ID01', type: 'line', value: 'Total Occ', color: '#da783f' },
+              { id: 'ID02', type: 'line', value: 'Arr. Rooms', color: '#8884d8' },
+              { id: 'ID03', type: 'line', value: 'Dep. Rooms', color: '#82ca9d' }
+            ]}
+          />
+          <Line type='monotone' dataKey='totalOcc' stroke='#da783f' strokeWidth={strokeWidth} />
+          <Line type='monotone' dataKey='arrRooms' stroke='#8884d8' strokeWidth={strokeWidth} />
+          <Line type='monotone' dataKey='depRooms' stroke='#82ca9d' strokeWidth={strokeWidth} />
         </LineChart>
       </ResponsiveContainer>
     </>
@@ -59,3 +67,17 @@ function ReservationForestChart({ data }: Props) {
 }
 
 export default ReservationForestChart
+
+type RenderLegendProps = {
+  payload: any[]
+}
+
+const RenderLegend = ({ payload }: RenderLegendProps) => {
+  return (
+    <ul>
+      {payload.map((entry, index) => (
+        <li key={`item-${index}`}>{entry.value}</li>
+      ))}
+    </ul>
+  )
+}

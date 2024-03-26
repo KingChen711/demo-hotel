@@ -52,10 +52,10 @@ function PropertyFilter({ propertyCodes }: Props) {
             const isSelected = selectedProperties.includes(propertyCode)
             return (
               <Button
+                key={propertyCode}
                 variant={isSelected ? 'secondary' : 'outline'}
                 className={cn(isSelected && 'border-primary border')}
                 onClick={() => handleSelectProperty(propertyCode)}
-                key={propertyCode}
               >
                 {propertyCode}
               </Button>

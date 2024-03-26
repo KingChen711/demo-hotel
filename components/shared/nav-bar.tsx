@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import MobileNavBar from './mobile-nav-bar'
 import { whoAmI } from '@/lib/actions/auth'
 import { cookies } from 'next/headers'
+import LogOutButton from './log-out-button'
 
 async function NavBar() {
   const cookieStore = cookies()
@@ -28,7 +29,9 @@ async function NavBar() {
           </Avatar>
           <div className='flex flex-col'>
             <div className='font-bold text-sm'>{currentUser.name}</div>
-            <div className='text-sm cursor-pointer hover:underline hover:text-primary'>Log out</div>
+            <LogOutButton>
+              <div className='text-sm cursor-pointer hover:underline hover:text-primary'>Log out</div>
+            </LogOutButton>
           </div>
         </div>
 

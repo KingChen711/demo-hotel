@@ -2,6 +2,7 @@
 
 import { User } from '@/types'
 import { cookies } from 'next/headers'
+import { TLoginSchema } from '../schemas/auth'
 
 export const whoAmI = async (token: string): Promise<User | null> => {
   if (token !== 'fakeToken') {
@@ -22,10 +23,20 @@ export const whoAmI = async (token: string): Promise<User | null> => {
   }) //fake fetching
 }
 
-export const login = async () => {
+export const login = async ({ email, password }: TLoginSchema) => {
+  //fake validate login
+  if (email !== 'demohotel@gmail.com' || password !== 'Password1@') {
+    throw new Error('Wrong email and/or password!')
+  }
+
   const token = 'fakeToken'
   const cookieStore = cookies()
   cookieStore.set('auth-token', token)
 
   return token
+}
+
+export const logout = async () => {
+  const cookieStore = cookies()
+  cookieStore.delete('auth-token')
 }

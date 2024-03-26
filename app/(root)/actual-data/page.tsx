@@ -1,10 +1,10 @@
 import PropertyFilter from '@/components/property-filter'
-import { Button } from '@/components/ui/button'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { getPropertiesByCodes, getAllPropertyCodes } from '@/lib/actions/actual-data'
+import RevenueBarChart from '@/components/shared/revenue-bar-chart'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { getPropertiesByCodes, getAllPropertyCodes, getRevenueBarChartData } from '@/lib/actions/actual-data'
 import Image from 'next/image'
-import Link from 'next/link'
-import React, { useMemo } from 'react'
+import React from 'react'
 
 type Props = {
   searchParams: {
@@ -16,6 +16,7 @@ async function ActualDataPage({ searchParams }: Props) {
   const propertyCodes = await getAllPropertyCodes()
   const selectedProperties = searchParams.selected_properties?.split(',') || []
   const properties = await getPropertiesByCodes(selectedProperties)
+  const chartData = await getRevenueBarChartData(selectedProperties)
 
   const grandTotal = {
     totalRoomInHotel: 0,
@@ -26,7 +27,12 @@ async function ActualDataPage({ searchParams }: Props) {
     occ: 0,
     adr: 0,
     hotelRoom: 0,
-    availableRoom: 0
+    availableRoom: 0,
+    revenue: {
+      occupiedRoom: 0,
+      groupRoom: 0,
+      transientRoom: 0
+    }
   }
 
   properties.forEach((property) => {
@@ -39,6 +45,9 @@ async function ActualDataPage({ searchParams }: Props) {
     grandTotal.adr += property.adr
     grandTotal.hotelRoom += property.hotelRoom
     grandTotal.availableRoom += property.availableRoom
+    grandTotal.revenue.occupiedRoom += property.revenue.occupiedRoom
+    grandTotal.revenue.groupRoom += property.revenue.groupRoom
+    grandTotal.revenue.transientRoom += property.revenue.transientRoom
   })
 
   return (
@@ -48,52 +57,62 @@ async function ActualDataPage({ searchParams }: Props) {
       <PropertyFilter propertyCodes={propertyCodes} />
 
       {properties.length > 0 ? (
-        <Table className='mt-6'>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Code</TableHead>
-              <TableHead>Total Room in Hotel</TableHead>
-              <TableHead>Room Revenue</TableHead>
-              <TableHead>F&B Revenue</TableHead>
-              <TableHead>Other Revenue</TableHead>
-              <TableHead>Total Revenue</TableHead>
-              <TableHead>Occ %</TableHead>
-              <TableHead>ADR</TableHead>
-              <TableHead>Hotel Room</TableHead>
-              <TableHead>Available Rooms</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {properties.map((property) => {
-              return (
-                <TableRow>
-                  <TableCell className='font-medium'>{property.code}</TableCell>
-                  <TableCell>{property.totalRoomInHotel}</TableCell>
-                  <TableCell>${property.roomRevenue}</TableCell>
-                  <TableCell>${property.fnbRevenue}</TableCell>
-                  <TableCell>${property.otherRevenue}</TableCell>
-                  <TableCell>${property.roomRevenue + property.fnbRevenue + property.otherRevenue}</TableCell>
-                  <TableCell>{property.occ}%</TableCell>
-                  <TableCell>{property.adr}</TableCell>
-                  <TableCell>{property.hotelRoom}</TableCell>
-                  <TableCell>{property.availableRoom}</TableCell>
-                </TableRow>
-              )
-            })}
-            <TableRow>
-              <TableCell className='font-bold'>Grand Total</TableCell>
-              <TableCell>{grandTotal.totalRoomInHotel}</TableCell>
-              <TableCell>${grandTotal.roomRevenue.toFixed(2)}</TableCell>
-              <TableCell>${grandTotal.fnbRevenue.toFixed(2)}</TableCell>
-              <TableCell>${grandTotal.otherRevenue.toFixed(2)}</TableCell>
-              <TableCell>${grandTotal.totalRevenue.toFixed(2)}</TableCell>
-              <TableCell>{grandTotal.occ.toFixed(2)}%</TableCell>
-              <TableCell>{grandTotal.adr.toFixed(2)}</TableCell>
-              <TableCell>{grandTotal.hotelRoom}</TableCell>
-              <TableCell>{grandTotal.availableRoom}</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+        <>
+          <div className='grid w-full custom-scrollbar'>
+            <div className='overflow-x-auto'>
+              <Table className='mt-6 rounded-xl overflow-hidden'>
+                <TableHeader className='bg-primary'>
+                  <TableRow>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>Code</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>Total Room in Hotel</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>Room Revenue</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>F&B Revenue</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>Other Revenue</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>Total Revenue</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>Occ %</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>ADR</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>Hotel Room</TableHead>
+                    <TableHead className='text-primary-foreground whitespace-nowrap'>Available Rooms</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody className='bg-card shadow-xl'>
+                  {properties.map((property) => {
+                    return (
+                      <TableRow key={property.id}>
+                        <TableCell className='font-medium'>{property.code}</TableCell>
+                        <TableCell className='text-center'>{property.totalRoomInHotel}</TableCell>
+                        <TableCell className='text-center'>${property.roomRevenue}</TableCell>
+                        <TableCell className='text-center'>${property.fnbRevenue}</TableCell>
+                        <TableCell className='text-center'>${property.otherRevenue}</TableCell>
+                        <TableCell className='text-center'>
+                          ${(property.roomRevenue + property.fnbRevenue + property.otherRevenue).toFixed(2)}
+                        </TableCell>
+                        <TableCell className='text-center'>{property.occ}%</TableCell>
+                        <TableCell className='text-center'>{property.adr}</TableCell>
+                        <TableCell className='text-center'>{property.hotelRoom}</TableCell>
+                        <TableCell className='text-center'>{property.availableRoom}</TableCell>
+                      </TableRow>
+                    )
+                  })}
+                  <TableRow>
+                    <TableCell className='font-bold whitespace-nowrap'>Grand Total</TableCell>
+                    <TableCell className='text-center'>{grandTotal.totalRoomInHotel}</TableCell>
+                    <TableCell className='text-center'>${grandTotal.roomRevenue.toFixed(2)}</TableCell>
+                    <TableCell className='text-center'>${grandTotal.fnbRevenue.toFixed(2)}</TableCell>
+                    <TableCell className='text-center'>${grandTotal.otherRevenue.toFixed(2)}</TableCell>
+                    <TableCell className='text-center'>${grandTotal.totalRevenue.toFixed(2)}</TableCell>
+                    <TableCell className='text-center'>{grandTotal.occ.toFixed(2)}%</TableCell>
+                    <TableCell className='text-center'>{grandTotal.adr.toFixed(2)}</TableCell>
+                    <TableCell className='text-center'>{grandTotal.hotelRoom}</TableCell>
+                    <TableCell className='text-center'>{grandTotal.availableRoom}</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+
+          <RevenueBarChart data={chartData} />
+        </>
       ) : (
         <NoResult />
       )}

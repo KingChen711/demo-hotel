@@ -3,234 +3,299 @@
     "id": 1,
     "code": "ALL",
     "name": "Sokha Hotels & Resorts",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 279,
+    "roomRevenue": 163961.8,
+    "fnbRevenue": 693036.33,
+    "otherRevenue": 51139.45,
+    "occ": 24.01,
+    "adr": 47.39,
+    "hotelRoom": 14839,
+    "availableRoom": 11070,
     "clusterId": 1,
     "cluster": {
       "id": 1,
       "name": "Master"
+    },
+    "revenue": {
+      "occupiedRoom": 202751.36,
+      "groupRoom": 87241.98,
+      "transientRoom": 63664.61
     }
   },
   {
     "id": 2,
     "code": "SPH",
     "name": "Sokha Phnom Penh Hotel",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 665,
+    "roomRevenue": 157704.95,
+    "fnbRevenue": 703949.59,
+    "otherRevenue": 27406.53,
+    "occ": 14.23,
+    "adr": 46.1,
+    "hotelRoom": 14526,
+    "availableRoom": 10321,
     "clusterId": 2,
     "cluster": {
       "id": 2,
       "name": "Phnom Penh"
+    },
+    "revenue": {
+      "occupiedRoom": 272500.08,
+      "groupRoom": 102790.91,
+      "transientRoom": 44688.37
     }
   },
   {
     "id": 3,
     "code": "PP02",
     "name": "Sokha Phnom Penh Residence",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 253,
+    "roomRevenue": 161488.4,
+    "fnbRevenue": 333000.71,
+    "otherRevenue": 44414.42,
+    "occ": 13.65,
+    "adr": 44.49,
+    "hotelRoom": 15953,
+    "availableRoom": 13027,
     "clusterId": 2,
     "cluster": {
       "id": 2,
       "name": "Phnom Penh"
+    },
+    "revenue": {
+      "occupiedRoom": 243342.16,
+      "groupRoom": 82070.59,
+      "transientRoom": 51843.99
     }
   },
   {
     "id": 4,
     "code": "SR01",
     "name": "Sokha Angkor Resort (Luxury)",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 659,
+    "roomRevenue": 172885.55,
+    "fnbRevenue": 357950.96,
+    "otherRevenue": 21548.58,
+    "occ": 24.87,
+    "adr": 59.43,
+    "hotelRoom": 12997,
+    "availableRoom": 12110,
     "clusterId": 3,
     "cluster": {
       "id": 3,
       "name": "Siem Reap"
+    },
+    "revenue": {
+      "occupiedRoom": 209587.49,
+      "groupRoom": 90899.59,
+      "transientRoom": 57064.53
     }
   },
   {
     "id": 5,
     "code": "SR02",
     "name": "Sokha Siem Reap Resort & Convention Center",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 517,
+    "roomRevenue": 218852.99,
+    "fnbRevenue": 623611.54,
+    "otherRevenue": 18067.03,
+    "occ": 5.26,
+    "adr": 59.48,
+    "hotelRoom": 11224,
+    "availableRoom": 13169,
     "clusterId": 3,
     "cluster": {
       "id": 3,
       "name": "Siem Reap"
+    },
+    "revenue": {
+      "occupiedRoom": 171331,
+      "groupRoom": 97299.41,
+      "transientRoom": 88223
     }
   },
   {
     "id": 6,
     "code": "SR03",
     "name": "Sokha Palace Siem Reap Hotel (Comfort)",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 312,
+    "roomRevenue": 212295.5,
+    "fnbRevenue": 783173.39,
+    "otherRevenue": 46056.23,
+    "occ": 18.86,
+    "adr": 41.89,
+    "hotelRoom": 13175,
+    "availableRoom": 7446,
     "clusterId": 3,
     "cluster": {
       "id": 3,
       "name": "Siem Reap"
+    },
+    "revenue": {
+      "occupiedRoom": 267927.87,
+      "groupRoom": 81632.17,
+      "transientRoom": 73649.82
     }
   },
   {
     "id": 7,
     "code": "SR04",
     "name": "Sokha Private Mansion (Villas)",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 794,
+    "roomRevenue": 152895.95,
+    "fnbRevenue": 538651.88,
+    "otherRevenue": 24140.28,
+    "occ": 13.23,
+    "adr": 53.27,
+    "hotelRoom": 17444,
+    "availableRoom": 14422,
     "clusterId": 3,
     "cluster": {
       "id": 3,
       "name": "Siem Reap"
+    },
+    "revenue": {
+      "occupiedRoom": 248075.73,
+      "groupRoom": 143218.99,
+      "transientRoom": 86712.74
     }
   },
   {
     "id": 8,
     "code": "SV01",
     "name": "Sokha Beach Resort",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 665,
+    "roomRevenue": 228077.72,
+    "fnbRevenue": 653553.79,
+    "otherRevenue": 12049.11,
+    "occ": 24.26,
+    "adr": 47.66,
+    "hotelRoom": 10931,
+    "availableRoom": 12238,
     "clusterId": 4,
     "cluster": {
       "id": 4,
       "name": "Sihanoukville"
+    },
+    "revenue": {
+      "occupiedRoom": 279902.22,
+      "groupRoom": 125380.93,
+      "transientRoom": 89653.66
     }
   },
   {
     "id": 9,
     "code": "SV02",
     "name": "Sokha Bayview by Sokha Beach Resort",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 403,
+    "roomRevenue": 203317.87,
+    "fnbRevenue": 659632.04,
+    "otherRevenue": 12300.71,
+    "occ": 19.07,
+    "adr": 58.95,
+    "hotelRoom": 16011,
+    "availableRoom": 10217,
     "clusterId": 4,
     "cluster": {
       "id": 4,
       "name": "Sihanoukville"
+    },
+    "revenue": {
+      "occupiedRoom": 213911,
+      "groupRoom": 94654.61,
+      "transientRoom": 95439.77
     }
   },
   {
     "id": 10,
     "code": "SV03",
     "name": "Lakeside by Sokha Beach Resort",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 799,
+    "roomRevenue": 232184.31,
+    "fnbRevenue": 769519.44,
+    "otherRevenue": 55758.31,
+    "occ": 22.01,
+    "adr": 41.24,
+    "hotelRoom": 17928,
+    "availableRoom": 9900,
     "clusterId": 4,
     "cluster": {
       "id": 4,
       "name": "Sihanoukville"
+    },
+    "revenue": {
+      "occupiedRoom": 247687.14,
+      "groupRoom": 118730.89,
+      "transientRoom": 35223.29
     }
   },
   {
     "id": 11,
     "code": "SV04",
     "name": "Moha Mohori by Sokha Beach Resort",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 587,
+    "roomRevenue": 241356.69,
+    "fnbRevenue": 425581.5,
+    "otherRevenue": 39814.59,
+    "occ": 9.69,
+    "adr": 40.91,
+    "hotelRoom": 8849,
+    "availableRoom": 14347,
     "clusterId": 4,
     "cluster": {
       "id": 4,
       "name": "Sihanoukville"
+    },
+    "revenue": {
+      "occupiedRoom": 256219.9,
+      "groupRoom": 138088.82,
+      "transientRoom": 80082.37
     }
   },
   {
     "id": 12,
     "code": "KP01",
     "name": "Thansur Sokha Hotel",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 393,
+    "roomRevenue": 178981.41,
+    "fnbRevenue": 543824.95,
+    "otherRevenue": 30558.63,
+    "occ": 17.99,
+    "adr": 59.89,
+    "hotelRoom": 17224,
+    "availableRoom": 12137,
     "clusterId": 5,
     "cluster": {
       "id": 5,
       "name": "Kampot"
+    },
+    "revenue": {
+      "occupiedRoom": 298193.55,
+      "groupRoom": 100687.92,
+      "transientRoom": 56026.08
     }
   },
   {
     "id": 13,
     "code": "KP02",
     "name": "Le Bokor Palace",
-    "totalRoomInHotel": 744,
-    "roomRevenue": 234458.7,
-    "fnbRevenue": 609316.22,
-    "otherRevenue": 51547.3,
-    "occ": 22.8,
-    "adr": 57.59,
-    "hotelRoom": 17856,
-    "availableRoom": 13785,
+    "totalRoomInHotel": 291,
+    "roomRevenue": 225057.52,
+    "fnbRevenue": 766135.49,
+    "otherRevenue": 12437.54,
+    "occ": 12.85,
+    "adr": 59.97,
+    "hotelRoom": 8598,
+    "availableRoom": 7418,
     "clusterId": 5,
     "cluster": {
       "id": 5,
       "name": "Kampot"
+    },
+    "revenue": {
+      "occupiedRoom": 157324.56,
+      "groupRoom": 102369.61,
+      "transientRoom": 59033.07
     }
   }
 ]

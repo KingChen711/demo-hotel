@@ -17,6 +17,11 @@ export type Property = {
   hotelRoom: number
   availableRoom: number
   clusterId: number
+  revenue: {
+    occupiedRoom: number
+    groupRoom: number
+    transientRoom: number
+  }
 
   //navigate
   cluster: Cluster
@@ -36,4 +41,10 @@ export type User = {
   avatarUrl: string
 }
 
-export type ReservationForecastData = { date: 'string'; totalOcc: number; arrRooms: number; depRooms: number }[]
+export type ReservationForecastData = { date: string; totalOcc: number; arrRooms: number; depRooms: number }[]
+export type RevenueBarChartData = {
+  name: string
+  occupiedRoom: number
+  groupRoom: number
+  transientRoom: number
+}[]

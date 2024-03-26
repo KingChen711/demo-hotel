@@ -10,6 +10,7 @@ import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import { User } from '@/types'
+import LogOutButton from './log-out-button'
 
 type Props = {
   currentUser: User
@@ -35,7 +36,7 @@ function MobileNavBar({ currentUser }: Props) {
             <NavContent />
           </SheetClose>
 
-          <div className='flex flex-col items-center gap-3 mt-4'>
+          <div className='flex flex-col items-center gap-3 mt-8'>
             <Avatar>
               <AvatarImage src={currentUser.avatarUrl} />
               <AvatarFallback>CN</AvatarFallback>
@@ -45,9 +46,11 @@ function MobileNavBar({ currentUser }: Props) {
 
             <SheetClose asChild>
               <Link className='w-full' href='/sign-in'>
-                <Button variant='secondary' className='small-medium min-h-[41px] rounded-lg px-4 py-3 w-full'>
-                  Log Out
-                </Button>
+                <LogOutButton>
+                  <Button variant='secondary' className='small-medium min-h-[41px] rounded-lg px-4 py-3 w-full'>
+                    Log Out
+                  </Button>
+                </LogOutButton>
               </Link>
             </SheetClose>
           </div>
