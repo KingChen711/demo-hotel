@@ -26,25 +26,6 @@ export function formUrlQuery({ params, key, value }: UrlQueryParams) {
   )
 }
 
-export function getCookieValue(key: string) {
-  // Split all cookies into an array
-  const cookiesArray = document.cookie.split(';')
-
-  // Iterate through the array to find the cookie with the given name
-  for (let i = 0; i < cookiesArray.length; i++) {
-    let cookie = cookiesArray[i].trim()
-
-    // Check if the cookie starts with the provided name
-    if (cookie.indexOf(key + '=') === 0) {
-      // Return the value of the cookie
-      return cookie.substring(key.length + 1, cookie.length)
-    }
-  }
-
-  // If the cookie with the given name is not found, return null
-  return null
-}
-
 export function formatNumber(num: number) {
   return Number(num.toFixed(2)).toLocaleString('en-US')
 }

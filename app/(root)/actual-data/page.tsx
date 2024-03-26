@@ -1,6 +1,5 @@
 import PropertyFilter from '@/components/property-filter'
 import RevenueBarChart from '@/components/shared/revenue-bar-chart'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getPropertiesByCodes, getAllPropertyCodes, getRevenueBarChartData } from '@/lib/actions/actual-data'
 import { formatNumber } from '@/lib/utils'
@@ -138,8 +137,8 @@ function NoResult() {
       <h2 className='text-[24px] font-bold leading-[31.2px] mt-8'>There are no property have selected</h2>
       <p className='text-[14px] font-normal leading-[19.6px] my-3.5 max-w-md text-center'>
         Take the lead and start organizing your accommodations! 🏨 Select some properties now to get started with
-        managing your hotel efficiently. Your choices pave the way for seamless operations and satisfied guests. Don't
-        wait, take action and elevate your management game! 🌟
+        managing your hotel efficiently. Your choices pave the way for seamless operations and satisfied guests.
+        Don&apos;t wait, take action and elevate your management game! 🌟
       </p>
     </div>
   )

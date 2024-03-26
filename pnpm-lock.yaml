@@ -80,6 +80,9 @@ dependencies:
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
+  xlsx:
+    specifier: https://cdn.sheetjs.com/xlsx-0.20.1/xlsx-0.20.1.tgz
+    version: '@cdn.sheetjs.com/xlsx-0.20.1/xlsx-0.20.1.tgz'
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -4179,4 +4182,12 @@ packages:
       '@types/react': 18.2.69
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  '@cdn.sheetjs.com/xlsx-0.20.1/xlsx-0.20.1.tgz':
+    resolution: {tarball: https://cdn.sheetjs.com/xlsx-0.20.1/xlsx-0.20.1.tgz}
+    name: xlsx
+    version: 0.20.1
+    engines: {node: '>=0.8'}
+    hasBin: true
     dev: false
