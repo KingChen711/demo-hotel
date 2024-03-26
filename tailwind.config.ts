@@ -23,6 +23,10 @@ const config = {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))'
         },
+        'primary-100': {
+          DEFAULT: 'hsl(var(--primary-100))',
+          foreground: 'hsl(var(--primary-100-foreground))'
+        },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))'

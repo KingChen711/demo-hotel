@@ -8,7 +8,7 @@ export const getAllPropertyCodes = async (): Promise<string[]> => {
     setTimeout(() => {
       const propertyCodes = actualData.map((property) => property.code)
       return resolve(propertyCodes as string[])
-    }, 500)
+    }, 300)
   }) //fake fetching
 }
 
@@ -17,7 +17,7 @@ export const getPropertiesByCodes = async (codes: string[]): Promise<Property[]>
     setTimeout(() => {
       const propertyCodes = actualData.filter((property) => codes.includes(property.code))
       return resolve(propertyCodes as Property[])
-    }, 500)
+    }, 300)
   }) //fake fetching
 }
 
@@ -38,6 +38,6 @@ export const getRevenueBarChartData = async (codes: string[]): Promise<RevenueBa
         })
 
       return resolve(data)
-    }, 500)
+    }, 300)
   }) //fake fetching
 }

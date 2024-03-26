@@ -3,6 +3,7 @@ import RevenueBarChart from '@/components/shared/revenue-bar-chart'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getPropertiesByCodes, getAllPropertyCodes, getRevenueBarChartData } from '@/lib/actions/actual-data'
+import { formatNumber } from '@/lib/utils'
 import Image from 'next/image'
 import React from 'react'
 
@@ -60,7 +61,7 @@ async function ActualDataPage({ searchParams }: Props) {
         <>
           <div className='grid w-full custom-scrollbar'>
             <div className='overflow-x-auto'>
-              <Table className='mt-6 rounded-xl overflow-hidden'>
+              <Table className='mt-6 rounded-md overflow-hidden'>
                 <TableHeader className='bg-primary'>
                   <TableRow>
                     <TableHead className='text-primary-foreground whitespace-nowrap'>Code</TableHead>
@@ -80,31 +81,31 @@ async function ActualDataPage({ searchParams }: Props) {
                     return (
                       <TableRow key={property.id}>
                         <TableCell className='font-medium'>{property.code}</TableCell>
-                        <TableCell className='text-center'>{property.totalRoomInHotel}</TableCell>
-                        <TableCell className='text-center'>${property.roomRevenue}</TableCell>
-                        <TableCell className='text-center'>${property.fnbRevenue}</TableCell>
-                        <TableCell className='text-center'>${property.otherRevenue}</TableCell>
+                        <TableCell className='text-center'>{formatNumber(property.totalRoomInHotel)}</TableCell>
+                        <TableCell className='text-center'>${formatNumber(property.roomRevenue)}</TableCell>
+                        <TableCell className='text-center'>${formatNumber(property.fnbRevenue)}</TableCell>
+                        <TableCell className='text-center'>${formatNumber(property.otherRevenue)}</TableCell>
                         <TableCell className='text-center'>
-                          ${(property.roomRevenue + property.fnbRevenue + property.otherRevenue).toFixed(2)}
+                          ${formatNumber(property.roomRevenue + property.fnbRevenue + property.otherRevenue)}
                         </TableCell>
-                        <TableCell className='text-center'>{property.occ}%</TableCell>
-                        <TableCell className='text-center'>{property.adr}</TableCell>
-                        <TableCell className='text-center'>{property.hotelRoom}</TableCell>
-                        <TableCell className='text-center'>{property.availableRoom}</TableCell>
+                        <TableCell className='text-center'>{formatNumber(property.occ)}%</TableCell>
+                        <TableCell className='text-center'>{formatNumber(property.adr)}</TableCell>
+                        <TableCell className='text-center'>{formatNumber(property.hotelRoom)}</TableCell>
+                        <TableCell className='text-center'>{formatNumber(property.availableRoom)}</TableCell>
                       </TableRow>
                     )
                   })}
                   <TableRow>
                     <TableCell className='font-bold whitespace-nowrap'>Grand Total</TableCell>
-                    <TableCell className='text-center'>{grandTotal.totalRoomInHotel}</TableCell>
-                    <TableCell className='text-center'>${grandTotal.roomRevenue.toFixed(2)}</TableCell>
-                    <TableCell className='text-center'>${grandTotal.fnbRevenue.toFixed(2)}</TableCell>
-                    <TableCell className='text-center'>${grandTotal.otherRevenue.toFixed(2)}</TableCell>
-                    <TableCell className='text-center'>${grandTotal.totalRevenue.toFixed(2)}</TableCell>
-                    <TableCell className='text-center'>{grandTotal.occ.toFixed(2)}%</TableCell>
-                    <TableCell className='text-center'>{grandTotal.adr.toFixed(2)}</TableCell>
-                    <TableCell className='text-center'>{grandTotal.hotelRoom}</TableCell>
-                    <TableCell className='text-center'>{grandTotal.availableRoom}</TableCell>
+                    <TableCell className='text-center'>{formatNumber(grandTotal.totalRoomInHotel)}</TableCell>
+                    <TableCell className='text-center'>${formatNumber(grandTotal.roomRevenue)}</TableCell>
+                    <TableCell className='text-center'>${formatNumber(grandTotal.fnbRevenue)}</TableCell>
+                    <TableCell className='text-center'>${formatNumber(grandTotal.otherRevenue)}</TableCell>
+                    <TableCell className='text-center'>${formatNumber(grandTotal.totalRevenue)}</TableCell>
+                    <TableCell className='text-center'>{formatNumber(grandTotal.occ)}%</TableCell>
+                    <TableCell className='text-center'>{formatNumber(grandTotal.adr)}</TableCell>
+                    <TableCell className='text-center'>{formatNumber(grandTotal.hotelRoom)}</TableCell>
+                    <TableCell className='text-center'>{formatNumber(grandTotal.availableRoom)}</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>

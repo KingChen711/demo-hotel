@@ -44,3 +44,7 @@ export function getCookieValue(key: string) {
   // If the cookie with the given name is not found, return null
   return null
 }
+
+export function formatNumber(num: number) {
+  return Number(num.toFixed(2)).toLocaleString('en-US')
+}

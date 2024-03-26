@@ -48,3 +48,50 @@ export type RevenueBarChartData = {
   groupRoom: number
   transientRoom: number
 }[]
+
+export type TotalCountAndSale = {
+  total_actual: CountAndSale
+  adults_actual: CountAndSale
+  children_actual: CountAndSale
+}
+
+export type CountAndSale = {
+  count: number
+  percentage_count: number
+  sales: number
+  percentage_sales: number
+}
+
+export type RecordMeals = {
+  [key: string]: {
+    room: string
+    guest_names: string
+    package_code: string
+    count: number
+    pax: string
+    remark: string
+  }
+}
+
+export type RecordTimeInDay = {
+  rowId?: string
+  total: TotalCountAndSale
+  records: RecordMeals
+}
+
+export type ReportDetail = {
+  rowId?: string
+  report_date: string
+  total: TotalCountAndSale
+  outlet: [
+    {
+      rowId?: string
+      outlet_code: string
+      outlet_name: string
+      total: TotalCountAndSale
+      breakfast: RecordTimeInDay
+      lunch: RecordTimeInDay
+      dinner: RecordTimeInDay
+    }
+  ]
+}

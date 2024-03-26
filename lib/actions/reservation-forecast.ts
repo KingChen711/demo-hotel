@@ -11,6 +11,6 @@ export const getReservationForecastData = async (days: number): Promise<Reservat
         (record) => (today.getTime() - new Date(record.date).getTime()) / (1000 * 3600 * 24) < days
       )
       return resolve(result as ReservationForecastData)
-    }, 500)
+    }, 300)
   }) //fake fetching
 }

@@ -19,7 +19,7 @@ export const whoAmI = async (token: string): Promise<User | null> => {
   return await new Promise((resolve) => {
     setTimeout(() => {
       return resolve(user)
-    }, 500)
+    }, 300)
   }) //fake fetching
 }
 
