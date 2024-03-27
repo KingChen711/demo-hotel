@@ -26,7 +26,7 @@ function LeftSideBar() {
             >
               <Image
                 src={item.imgURL}
-                alt={item.label}
+                alt={item.label.toLocaleLowerCase()}
                 width={20}
                 height={20}
                 className={cn(isActive && 'invert-colors')}

@@ -20,12 +20,12 @@ function MobileNavBar({ currentUser }: Props) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Image src='/assets/icons/hamburger.svg' alt='Menu' width={36} height={36} className='sm:hidden' />
+        <Image src='/assets/icons/hamburger.svg' alt='menu' width={36} height={36} className='sm:hidden' />
       </SheetTrigger>
 
       <SheetContent side='left' className='border-none'>
         <Link href='/' className='flex items-center gap-1'>
-          <Image src='/assets/images/site-logo.svg' width={28} height={28} alt='DemoHotel' />
+          <Image src='/assets/images/site-logo.svg' width={28} height={28} alt='logo' />
 
           <p className='text-2xl font-bold leading-[31.2px] font-spaceGrotesk'>
             Demo<span className='text-primary'>Hotel</span>
@@ -38,7 +38,7 @@ function MobileNavBar({ currentUser }: Props) {
 
           <div className='flex flex-col items-center gap-3 mt-8'>
             <Avatar>
-              <AvatarImage src={currentUser.avatarUrl} />
+              <AvatarImage alt='user' src={currentUser.avatarUrl} />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
 
@@ -80,7 +80,7 @@ const NavContent = () => {
             >
               <Image
                 src={item.imgURL}
-                alt={item.label}
+                alt={item.label.toLocaleLowerCase()}
                 width={20}
                 height={20}
                 className={cn(isActive && 'invert-colors')}

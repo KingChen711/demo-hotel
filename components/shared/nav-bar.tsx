@@ -15,7 +15,7 @@ async function NavBar() {
   return (
     <nav className='bg-card flex justify-between items-center fixed z-50 w-full gap-5 p-6 sm:px-12'>
       <Link href='/' className='flex items-center gap-1'>
-        <Image src='/assets/images/site-logo.svg' width={28} height={28} alt='DemoHotel' />
+        <Image src='/assets/images/site-logo.svg' width={28} height={28} alt='logo' />
 
         <p className='text-2xl font-bold leading-[31.2px] font-spaceGrotesk max-sm:hidden'>
           Demo<span className='text-primary'>Hotel</span>
@@ -24,7 +24,7 @@ async function NavBar() {
       <div className='flex justify-between items-center gap-5'>
         <div className='flex items-center gap-2 max-sm:hidden'>
           <Avatar>
-            <AvatarImage src={currentUser.avatarUrl} />
+            <AvatarImage alt='user' src={currentUser.avatarUrl} />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <div className='flex flex-col'>
